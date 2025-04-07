@@ -130,15 +130,13 @@ function Package() {
             <div className="col-lg-4">
               <div className="shadow p-4 enquiry-sticky-box">
                 <form action="">
-                  <h4 className="text-center fw-medium mb-3">Booking form</h4>
+                  <h4 className="text-center fw-medium mb-3">Booking Form</h4>
 
                   <div className="row g-3">
                     <div className="col-12">
                       <div className="form-group">
                         <input
                           type="text"
-                          name=""
-                          id=""
                           placeholder="Full Name"
                           className="form-control shadow-none"
                           required
@@ -149,8 +147,6 @@ function Package() {
                       <div className="form-group">
                         <input
                           type="email"
-                          name=""
-                          id=""
                           placeholder="Email Address"
                           className="form-control shadow-none"
                           required
@@ -161,49 +157,50 @@ function Package() {
                       <div className="form-group">
                         <input
                           type="text"
-                          name=""
-                          id=""
                           placeholder="Phone Number"
                           className="form-control shadow-none"
                           required
                         />
                       </div>
                     </div>
+
+                    {/* Age Dropdown */}
                     <div className="col-md-6">
                       <select
-                        name=""
-                        id=""
                         className="form-select shadow-none w-100"
+                        defaultValue=""
                         required
                       >
-                        <option value="" selected>
+                        <option value="" disabled>
                           Select Age
                         </option>
-                        <option value="">0 - 10 Years</option>
-                        <option value="">11 - 20 Years</option>
-                        <option value="">21 - 30 Years</option>
-                        <option value="">40+ Years</option>
+                        <option value="0 - 10">0 - 10 Years</option>
+                        <option value="11 - 20">11 - 20 Years</option>
+                        <option value="21 - 30">21 - 30 Years</option>
+                        <option value="40+">40+ Years</option>
                       </select>
                     </div>
+
+                    {/* Gender Dropdown */}
                     <div className="col-md-6">
                       <select
-                        name=""
-                        id=""
                         className="form-select shadow-none w-100"
+                        defaultValue=""
                         required
                       >
-                        <option value="" selected disabled>
+                        <option value="" disabled>
                           Select Gender
                         </option>
-                        <option value="">Male</option>
-                        <option value="">Female</option>
-                        <option value="">Others</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="others">Others</option>
                       </select>
                     </div>
+
                     <div className="col-md-6">
                       <div className="form-group date">
                         <input
-                          type="date"
+                          type="text"
                           id="datepicker"
                           className="form-control shadow-none"
                           placeholder="Select date"
@@ -221,6 +218,7 @@ function Package() {
                         />
                       </div>
                     </div>
+
                     <div className="text-center">
                       <button type="submit" className="btn btn-primary">
                         Submit Your Booking

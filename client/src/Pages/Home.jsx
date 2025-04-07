@@ -727,9 +727,9 @@ function Home() {
                     pharmaceuticals, diagnostics, medical equipments, blood
                     banks, and other liaisoning services.
                   </p>
-                  <a href="biplab-sengupta.html">
+                  <Link to="/biplab">
                     <i className="ri-arrow-right-fill me-1"></i> Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -751,9 +751,9 @@ function Home() {
                     published multiple original work in national and
                     international peer reviewed journal.
                   </p>
-                  <a href="dr-pratim-sengupta.html">
+                  <Link to="/drpritam">
                     <i className="ri-arrow-right-fill me-1"></i> Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

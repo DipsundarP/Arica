@@ -127,6 +127,7 @@ function Book() {
       <section className="py-5 book-your-test">
         <div className="container">
           <div className="row">
+            {/* Booking Form */}
             <div className="col-lg-4">
               <div className="shadow p-4 enquiry-sticky-box">
                 <form action="">
@@ -134,11 +135,9 @@ function Book() {
 
                   <div className="row g-3">
                     <div className="col-12">
-                      <div className="form-group ">
+                      <div className="form-group">
                         <input
                           type="text"
-                          name=""
-                          id=""
                           placeholder="Full Name"
                           className="form-control shadow-none"
                           required
@@ -146,11 +145,9 @@ function Book() {
                       </div>
                     </div>
                     <div className="col-12">
-                      <div className="form-group ">
+                      <div className="form-group">
                         <input
                           type="email"
-                          name=""
-                          id=""
                           placeholder="Email Address"
                           className="form-control shadow-none"
                           required
@@ -158,48 +155,49 @@ function Book() {
                       </div>
                     </div>
                     <div className="col-12">
-                      <div className="form-group ">
+                      <div className="form-group">
                         <input
                           type="text"
-                          name=""
-                          id=""
                           placeholder="Phone Number"
                           className="form-control shadow-none"
                           required
                         />
                       </div>
                     </div>
+
+                    {/* Age Dropdown */}
                     <div className="col-md-6">
                       <select
-                        name=""
-                        id=""
                         className="form-select shadow-none w-100"
+                        defaultValue=""
                         required
                       >
-                        <option value="" selected>
+                        <option value="" disabled>
                           Select Age
                         </option>
-                        <option value="">0 - 10 Years</option>
-                        <option value="">11 - 20 Years</option>
-                        <option value="">21 - 30 Years</option>
-                        <option value="">40+ Years</option>
+                        <option value="0 - 10">0 - 10 Years</option>
+                        <option value="11 - 20">11 - 20 Years</option>
+                        <option value="21 - 30">21 - 30 Years</option>
+                        <option value="40+">40+ Years</option>
                       </select>
                     </div>
+
+                    {/* Gender Dropdown */}
                     <div className="col-md-6">
                       <select
-                        name=""
-                        id=""
                         className="form-select shadow-none w-100"
+                        defaultValue=""
                         required
                       >
-                        <option value="India" selected>
+                        <option value="" disabled>
                           Select Gender
                         </option>
-                        <option value="">Male</option>
-                        <option value="">Female</option>
-                        <option value="">Others</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="others">Others</option>
                       </select>
                     </div>
+
                     <div className="col-md-6">
                       <div className="form-group date">
                         <input
@@ -221,6 +219,7 @@ function Book() {
                         />
                       </div>
                     </div>
+
                     <div className="text-center">
                       <button type="submit" className="btn btn-primary">
                         Submit Your Booking
@@ -230,144 +229,42 @@ function Book() {
                 </form>
               </div>
             </div>
+
+            {/* Test Cards Section */}
             <div className="col-lg-8">
               <div className="col-12 text-center mb-4">
                 <h2 className="title">Book Your Test</h2>
               </div>
               <div className="row g-4">
-                <div className="col-md-4">
-                  <div className="shadow p-3 contain rounded-3 text-center">
-                    <div className=" mb-3">
-                      <img
-                        src="assets/images/x-ray.svg"
-                        className="test-img"
-                        alt=""
-                      />
+                {[
+                  { name: "X-RAY", img: "x-ray.svg" },
+                  { name: "USG", img: "usg.svg" },
+                  { name: "PATHOLOGY", img: "lab.svg" },
+                  { name: "KIDNEY", img: "kidneys.svg" },
+                  { name: "CBC", img: "red-blood-cells.svg" },
+                  { name: "LIVER", img: "liver.svg" },
+                  { name: "HEART", img: "heart.svg" },
+                ].map((test, index) => (
+                  <div className="col-md-4" key={index}>
+                    <div className="shadow p-3 contain rounded-3 text-center">
+                      <div className="mb-3">
+                        <img
+                          src={`assets/images/${test.img}`}
+                          className="test-img"
+                          alt={test.name}
+                        />
+                      </div>
+                      <h4 className="mb-2 test-name">{test.name}</h4>
+                      <p className="mb-3 test-desc text-muted">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ea, consectetur!
+                      </p>
+                      <a href="#" className="btn btn-outline-primary">
+                        Book Test
+                      </a>
                     </div>
-                    <h4 className="mb-2 test-name">X-RAY</h4>
-                    <p className="mb-3 test-desc text-muted">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Ea, consectetur!
-                    </p>
-                    <a href="#" className="btn btn-outline-primary">
-                      Book Test
-                    </a>
                   </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="shadow p-3 contain rounded-3 text-center">
-                    <div className=" mb-3">
-                      <img
-                        src="assets/images/usg.svg"
-                        className="test-img"
-                        alt=""
-                      />
-                    </div>
-                    <h4 className="mb-2 test-name">USG</h4>
-                    <p className="mb-3 test-desc text-muted">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Ea, consectetur!
-                    </p>
-                    <a href="#" className="btn btn-outline-primary">
-                      Book Test
-                    </a>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="shadow p-3 contain rounded-3 text-center">
-                    <div className=" mb-3">
-                      <img
-                        src="assets/images/lab.svg"
-                        className="test-img"
-                        alt=""
-                      />
-                    </div>
-                    <h4 className="mb-2 test-name">PATHOLOGY</h4>
-                    <p className="mb-3 test-desc text-muted">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Ea, consectetur!
-                    </p>
-                    <a href="#" className="btn btn-outline-primary">
-                      Book Test
-                    </a>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="shadow p-3 contain rounded-3 text-center">
-                    <div className=" mb-3">
-                      <img
-                        src="assets/images/kidneys.svg"
-                        className="test-img"
-                        alt=""
-                      />
-                    </div>
-                    <h4 className="mb-2 test-name">KIDNEY</h4>
-                    <p className="mb-3 test-desc text-muted">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Ea, consectetur!
-                    </p>
-                    <a href="#" className="btn btn-outline-primary">
-                      Book Test
-                    </a>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="shadow p-3 contain rounded-3 text-center">
-                    <div className=" mb-3">
-                      <img
-                        src="assets/images/red-blood-cells.svg"
-                        className="test-img"
-                        alt=""
-                      />
-                    </div>
-                    <h4 className="mb-2 test-name">CBC</h4>
-                    <p className="mb-3 test-desc text-muted">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Ea, consectetur!
-                    </p>
-                    <a href="#" className="btn btn-outline-primary">
-                      Book Test
-                    </a>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="shadow p-3 contain rounded-3 text-center">
-                    <div className=" mb-3">
-                      <img
-                        src="assets/images/liver.svg"
-                        className="test-img"
-                        alt=""
-                      />
-                    </div>
-                    <h4 className="mb-2 test-name">LIVER</h4>
-                    <p className="mb-3 test-desc text-muted">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Ea, consectetur!
-                    </p>
-                    <a href="#" className="btn btn-outline-primary">
-                      Book Test
-                    </a>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="shadow p-3 contain rounded-3 text-center">
-                    <div className=" mb-3">
-                      <img
-                        src="assets/images/heart.svg"
-                        className="test-img"
-                        alt=""
-                      />
-                    </div>
-                    <h4 className="mb-2 test-name">HEART</h4>
-                    <p className="mb-3 test-desc text-muted">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Ea, consectetur!
-                    </p>
-                    <a href="#" className="btn btn-outline-primary">
-                      Book Test
-                    </a>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

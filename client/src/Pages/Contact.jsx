@@ -136,96 +136,92 @@ function Contact() {
               <img
                 src="assets/images/conntact-avatar.svg"
                 className="img-fluid"
-                alt=""
+                alt="Contact Avatar"
               />
             </div>
             <div className="col-lg-6">
-              <div className="">
-                <form
-                  action=""
-                  className="form-control shadow p-4 rounded-3 border-0"
-                >
-                  <h4 className="text-center text-primary mb-1">
-                    Get In Touch
-                  </h4>
-                  <p className="text-center mb-4 text-muted">
-                    We will reach out to you within 24 hours
-                  </p>
-                  <div className="row g-3">
-                    <div className="col-md-6">
-                      <input
-                        type="text"
-                        placeholder="First name"
-                        className="form-control shadow-none py-2"
-                      />
-                    </div>
-                    <div className="col-md-6">
-                      <input
-                        type="text"
-                        placeholder="Last name"
-                        className="form-control shadow-none py-2"
-                      />
-                    </div>
-                    <div className="col-md-6">
-                      <input
-                        type="email"
-                        placeholder="Email address"
-                        className="form-control shadow-none py-2"
-                      />
-                    </div>
-                    <div className="col-md-6">
-                      <input
-                        type="text"
-                        placeholder="Phone number"
-                        className="form-control shadow-none py-2"
-                      />
-                    </div>
-                    <div className="col-md-6">
-                      <select
-                        name=""
-                        className="form-select shadow-none py-2"
-                        id=""
-                      >
-                        <option value="" defaultValue={true}>
-                          Select gender
-                        </option>
-                        <option value="">Male</option>
-                        <option value="">Female</option>
-                        <option value="">Others</option>
-                      </select>
-                    </div>
-                    <div className="col-md-6">
-                      <select
-                        name=""
-                        className="form-select shadow-none py-2"
-                        id=""
-                      >
-                        <option value="" selected>
-                          Select age
-                        </option>
-                        <option value="">0 - 10 Years</option>
-                        <option value="">11 - 20 Years</option>
-                        <option value="">21 - 30 Years</option>
-                        <option value="">40+ Years</option>
-                      </select>
-                    </div>
-                    <div className="col-12">
-                      <textarea
-                        style={{ resize: "none" }}
-                        name=""
-                        className="form-control shadow-none py-2"
-                        placeholder="Your message"
-                        id=""
-                      ></textarea>
-                    </div>
-                    <div className="col-12 text-center">
-                      <button type="submit" className="btn btn-primary">
-                        Submit your request
-                      </button>
-                    </div>
+              <form className="form-control shadow p-4 rounded-3 border-0">
+                <h4 className="text-center text-primary mb-1">Get In Touch</h4>
+                <p className="text-center mb-4 text-muted">
+                  We will reach out to you within 24 hours
+                </p>
+                <div className="row g-3">
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      placeholder="First name"
+                      className="form-control shadow-none py-2"
+                      required
+                    />
                   </div>
-                </form>
-              </div>
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      placeholder="Last name"
+                      className="form-control shadow-none py-2"
+                      required
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      type="email"
+                      placeholder="Email address"
+                      className="form-control shadow-none py-2"
+                      required
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      placeholder="Phone number"
+                      className="form-control shadow-none py-2"
+                      required
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <select
+                      className="form-select shadow-none py-2"
+                      defaultValue=""
+                      required
+                    >
+                      <option value="" disabled>
+                        Select gender
+                      </option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="others">Others</option>
+                    </select>
+                  </div>
+                  <div className="col-md-6">
+                    <select
+                      className="form-select shadow-none py-2"
+                      defaultValue=""
+                      required
+                    >
+                      <option value="" disabled>
+                        Select age
+                      </option>
+                      <option value="0-10">0 - 10 Years</option>
+                      <option value="11-20">11 - 20 Years</option>
+                      <option value="21-30">21 - 30 Years</option>
+                      <option value="40+">40+ Years</option>
+                    </select>
+                  </div>
+                  <div className="col-12">
+                    <textarea
+                      style={{ resize: "none" }}
+                      className="form-control shadow-none py-2"
+                      placeholder="Your message"
+                      required
+                    ></textarea>
+                  </div>
+                  <div className="col-12 text-center">
+                    <button type="submit" className="btn btn-primary">
+                      Submit your request
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>

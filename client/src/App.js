@@ -19,6 +19,9 @@ import Contact from "./Pages/Contact";
 import Package from "./Pages/Package";
 import Drpritam from "./Pages/Drpritam";
 import "./components/Blogsection";
+import "./components/Footer";
+import Footer from "./components/Footer";
+
 
 
 
@@ -54,6 +57,7 @@ function App() {
           <Route path="/package" element={<Package />} />
           <Route path="/drpritam" element={<Drpritam />} />
         </Routes>
+        <Footer/>
        
     </>
   );

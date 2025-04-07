@@ -169,7 +169,11 @@ function Blog() {
             ))}
           </div>
           <div className="mt-5 text-center">
-            <button className="btn btn-outline-primary">Load More Blogs</button>
+            <Link to="/blogdetails">
+              <button className="btn btn-outline-primary">
+                Load More Blogs
+              </button>
+            </Link>
           </div>
         </div>
       </section>
