@@ -327,6 +327,7 @@ function Contact() {
       {/* Map section */}
       <section className="map">
         <iframe
+          title="Google Map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.06263631145!2d88.3639214!3d22.501832999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02710b6d7ed939%3A0x68fc5cc015e46c35!2sTurain%20Software%20Pvt.%20Ltd.%20-%20Bulk%20SMS%20Service%20Provider%2C%20Business%20WhatsApp%20%26%20Digital%20Marketing%20Agency%20in%20Kolkata!5e0!3m2!1sen!2sin!4v1717650597636!5m2!1sen!2sin"
           width="100%"
           height="450"
@@ -336,6 +337,7 @@ function Contact() {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
+
       {/* Map section end */}
 
       {/* Modal Enquire */}
