@@ -3,6 +3,10 @@ import {  Routes, Route } from "react-router-dom";
 import "jquery-ui-dist/jquery-ui"; // jQuery UI
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
 import "bootstrap/dist/js/bootstrap.bundle.min"; // Bootstrap JS
+import "bootstrap/dist/css/bootstrap.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 
 
@@ -14,6 +18,9 @@ import Blogdetails from "./Pages/Blogdetails";
 import Contact from "./Pages/Contact";
 import Package from "./Pages/Package";
 import Drpritam from "./Pages/Drpritam";
+import "./components/Blogsection";
+
+
 
 
 function App() {

@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import Carousel from 'react-bootstrap/Carousel';
+import Blogsection from "../components/Blogsection";
+
 
 function Home() {
   return (
@@ -112,24 +115,27 @@ function Home() {
       <section className="my-4">
         <div className="container">
           <div className="row">
+            {/* Banner Slider */}
             <div className="col-lg-8">
-              <div className="banner-slider mb-0 rounded">
-                <div>
+              <Carousel className="banner-slider mb-0 rounded">
+                <Carousel.Item interval={1000}>
                   <img
                     src="assets/images/slider.jpg"
-                    className="img-fluid rounded"
-                    alt=""
+                    className="d-block w-100 img-fluid rounded"
+                    alt="First slide"
                   />
-                </div>
-                <div>
+                </Carousel.Item>
+                <Carousel.Item interval={1000}>
                   <img
                     src="assets/images/slider2.jpg"
-                    className="img-fluid rounded"
-                    alt=""
+                    className="d-block w-100 img-fluid rounded"
+                    alt="Second slide"
                   />
-                </div>
-              </div>
+                </Carousel.Item>
+              </Carousel>
             </div>
+
+            {/* Booking Form */}
             <div className="col-lg-4">
               <div className="border py-3 px-4 rounded">
                 <h5 className="text-center mb-3">BOOK A HOME VISIT NOW!</h5>
@@ -137,8 +143,8 @@ function Home() {
                   <div className="mb-2">
                     <input
                       type="text"
-                      name=""
-                      id=""
+                      name="fullName"
+                      id="fullName"
                       placeholder="Full Name"
                       className="form-control"
                     />
@@ -146,17 +152,17 @@ function Home() {
                   <div className="mb-2">
                     <input
                       type="text"
-                      name=""
-                      id=""
+                      name="phone"
+                      id="phone"
                       placeholder="Phone Number"
                       className="form-control"
                     />
                   </div>
                   <div className="mb-2">
                     <input
-                      type="text"
-                      name=""
-                      id=""
+                      type="email"
+                      name="email"
+                      id="email"
                       placeholder="Email ID"
                       className="form-control"
                     />
@@ -164,8 +170,8 @@ function Home() {
                   <div className="mb-2">
                     <input
                       type="text"
-                      name=""
-                      id=""
+                      name="collectionDate"
+                      id="collectionDate"
                       placeholder="Collection Date"
                       className="form-control"
                     />
@@ -756,133 +762,7 @@ function Home() {
       </section>
       {/* // end */}
 
-      {/* Blog Section */}
-      <section className="blog py-5">
-        <div className="container">
-          <div className="row">
-            <div className="col-12 text-center">
-              <h2 className="title mb-4">Our Latest Blogs</h2>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12 testimonial-slider">
-              <div className="card border p-3 m-2">
-                <img
-                  src="assets/images/blog/blog-1.jpg"
-                  className="card-img-top"
-                  alt="news_1"
-                />
-                <div className="card-body pb-2">
-                  <h6 className="mb-0">Published on Jun 24, 2023</h6>
-                  <div className="card-info pt-2 pb-2 border-bottom light-subtle">
-                    <h4 className="card-title">Pathology</h4>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div className="btn-comment d-flex justify-content-between mt-2 pt-1 align-items-center">
-                    <a
-                      href="pages/blog.html"
-                      className="align-items-center read-more"
-                    >
-                      Read More <i className="ri-arrow-right-fill"></i>
-                    </a>
-                    <p className="mb-0 d-flex align-items-center">
-                      <i className="fa-solid fa-user pe-2"></i>By Admin
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="card border p-3 m-2">
-                <img
-                  src="assets/images/blog/blog-2.jpg"
-                  className="card-img-top"
-                  alt="news_2"
-                />
-                <div className="card-body pb-2">
-                  <h6 className="mb-0">Published on Jun 24, 2023</h6>
-                  <div className="card-info pt-2 pb-2 border-bottom light-subtle">
-                    <h4 className="card-title">Biochemical</h4>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div className="btn-comment d-flex justify-content-between mt-2 pt-1 align-items-center">
-                    <a
-                      href="pages/blog.html"
-                      className="align-items-center read-more"
-                    >
-                      Read More <i className="ri-arrow-right-fill"></i>
-                    </a>
-                    <p className="mb-0 d-flex align-items-center">
-                      <i className="fa-solid fa-user pe-2"></i>By Admin
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="card border p-3 m-2">
-                <img
-                  src="assets/images/blog/blog-3.jpg"
-                  className="card-img-top"
-                  alt="news_3"
-                />
-                <div className="card-body pb-2">
-                  <h6 className="mb-0">Published on Jun 24, 2023</h6>
-                  <div className="card-info pt-2 pb-2 border-bottom light-subtle">
-                    <h4 className="card-title">Microbiological</h4>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div className="btn-comment d-flex justify-content-between mt-2 pt-1 align-items-center">
-                    <a
-                      href="pages/blog.html"
-                      className="align-items-center read-more"
-                    >
-                      Read More <i className="ri-arrow-right-fill"></i>
-                    </a>
-                    <p className="mb-0 d-flex align-items-center">
-                      <i className="fa-solid fa-user pe-2"></i>By Admin
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="card border p-3 m-2">
-                <img
-                  src="assets/images/blog/blog-2.jpg"
-                  className="card-img-top"
-                  alt="news_1"
-                />
-                <div className="card-body pb-2">
-                  <h6 className="mb-0">Published on Jun 24, 2023</h6>
-                  <div className="card-info pt-2 pb-2 border-bottom light-subtle">
-                    <h4 className="card-title">FNAC</h4>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div className="btn-comment d-flex justify-content-between mt-2 pt-1 align-items-center">
-                    <a
-                      href="pages/blog.html"
-                      className="align-items-center read-more"
-                    >
-                      Read More <i className="ri-arrow-right-fill"></i>
-                    </a>
-                    <p className="mb-0 d-flex align-items-center">
-                      <i className="fa-solid fa-user pe-2"></i>By Admin
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* // end */}
+      <Blogsection />
 
       {/* Modal Enquire */}
       <div
