@@ -522,37 +522,85 @@ function Home() {
           </div>
           <div className="row">
             <div className="col-md col-sm-6">
-              <a href="#" className="serviceBox">
+              <a
+                href="#"
+                className="serviceBox"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  marginLeft: "1px",
+                }}
+              >
                 <img src="assets/images/pathology.svg" alt="" />
                 <h5>Pathological Tests</h5>
               </a>
             </div>
             <div className="col-md col-sm-6">
-              <a href="#" className="serviceBox">
+              <a
+                href="#"
+                className="serviceBox"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  marginLeft: "1px",
+                }}
+              >
                 <img src="assets/images/microbiology.svg" alt="" />
                 <h5>Microbiological Tests</h5>
               </a>
             </div>
             <div className="col-md col-sm-6">
-              <a href="#" className="serviceBox">
+              <a
+                href="#"
+                className="serviceBox"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  marginLeft: "1px",
+                }}
+              >
                 <img src="assets/images/biochemical.svg" alt="" />
                 <h5>Biochemical</h5>
               </a>
             </div>
             <div className="col-md col-sm-6">
-              <a href="#" className="serviceBox">
+              <a
+                href="#"
+                className="serviceBox"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  marginLeft: "1px",
+                }}
+              >
                 <img src="assets/images/hormones.svg" alt="" />
                 <h5>Hormones</h5>
               </a>
             </div>
             <div className="col-md col-sm-6">
-              <a href="#" className="serviceBox">
+              <a
+                href="#"
+                className="serviceBox"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  marginLeft: "1px",
+                }}
+              >
                 <img src="assets/images/biopsy.svg" alt="" />
                 <h5>Biopsy</h5>
               </a>
             </div>
             <div className="col-md col-sm-6">
-              <a href="#" className="serviceBox">
+              <a
+                href="#"
+                className="serviceBox"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  marginLeft: "1px",
+                }}
+              >
                 <img src="assets/images/fnac.svg" alt="" />
                 <h5>FNAC</h5>
               </a>
@@ -727,8 +775,15 @@ function Home() {
                     pharmaceuticals, diagnostics, medical equipments, blood
                     banks, and other liaisoning services.
                   </p>
-                  <Link to="/biplab">
-                    <i className="ri-arrow-right-fill me-1"></i> Read More
+                  <Link
+                    to="/biplab"
+                    style={{
+                      textDecoration: "none",
+                      color: "blue",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    <i className="ri-arrow-right-fill me-1"></i> Read More...
                   </Link>
                 </div>
               </div>
@@ -751,8 +806,15 @@ function Home() {
                     published multiple original work in national and
                     international peer reviewed journal.
                   </p>
-                  <Link to="/drpritam">
-                    <i className="ri-arrow-right-fill me-1"></i> Read More
+                  <Link
+                    to="/drpritam"
+                    style={{
+                      textDecoration: "none",
+                      color: "blue",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    <i className="ri-arrow-right-fill me-1"></i> Read More...
                   </Link>
                 </div>
               </div>

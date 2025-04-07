@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 function Drpritam() {
   return (
@@ -114,7 +114,17 @@ function Drpritam() {
             <div className="col-md-7">
               <h1>Dr. Pratim Sengupta</h1>
               <p className="m-0">
-                <a href="index.html">Home </a> / Dr. Pratim Sengupta
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    marginLeft: "1px",
+                  }}
+                >
+                  Home{" "}
+                </Link>{" "}
+                / Dr. Pratim Sengupta
               </p>
             </div>
           </div>
@@ -337,4 +347,4 @@ function Drpritam() {
   );
 }
 
-export default Drpritam
+export default Drpritam;

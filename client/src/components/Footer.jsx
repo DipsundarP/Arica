@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -18,12 +19,24 @@ function Footer() {
               </p>
               <ul className="list-unstyled mb-3 contact-info">
                 <li>
-                  <a href="tel:9903336257">
+                  <a
+                    href="tel:9903336257"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
                     <i className="ri-smartphone-line me-2"></i> +91 99033 36257
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:aricadiagnos10@gmail.com">
+                  <a
+                    href="mailto:aricadiagnos10@gmail.com"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
                     <i className="ri-mail-fill me-2"></i>{" "}
                     aricadiagnos10@gmail.com
                   </a>
@@ -35,22 +48,70 @@ function Footer() {
               <h4 className="pb-3 mt-4">Quick Links</h4>
               <ul className="link-widget p-0">
                 <li>
-                  <a href="/">Home</a>
+                  <Link
+                    to="/"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">About Us</a>
+                  <Link
+                    to="#"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    About Us
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Services</a>
+                  <Link
+                    to="#"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    Services
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Gallery</a>
+                  <Link
+                    to="#"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    Gallery
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Blog</a>
+                  <Link
+                    to="/blog"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    Blog
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Contact</a>
+                  <Link
+                    to="/contact"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    Contact
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -59,22 +120,70 @@ function Footer() {
               <h4 className="pb-3 mt-4">Services</h4>
               <ul className="link-widget p-0">
                 <li>
-                  <a href="#">Pathology</a>
+                  <Link
+                    to="#"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    Pathology
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Biochemical</a>
+                  <Link
+                    to="#"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    Biochemical
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Microbiological</a>
+                  <Link
+                    to="#"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    Microbiological
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Hormon Test</a>
+                  <Link
+                    to="#"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    Hormon Test
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Biopsy</a>
+                  <Link
+                    to="#"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    Biopsy
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">FNAC</a>
+                  <Link
+                    to="#"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    FNAC
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -114,9 +223,16 @@ function Footer() {
           <div className="container-fluid copyright-section text-center pt-1 pb-3">
             <p className="mb-0 copy">
               © Copyright All Rights Reserved{" "}
-              <a href="/" className="text-light fw-medium">
+              <Link
+                to="/"
+                className="text-light fw-medium"
+                style={{
+                  textDecoration: "none",
+                  marginLeft: "1px",
+                }}
+              >
                 Arica Diagnostics
-              </a>
+              </Link>
             </p>
           </div>
         </div>

@@ -115,7 +115,17 @@ function Blog() {
             <div className="col-md-7">
               <h1>Health Blog</h1>
               <p className="m-0">
-                <a href="/">Home </a> / Health blog
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    marginLeft: "1px",
+                  }}
+                >
+                  Home{" "}
+                </Link>{" "}
+                / Health blog
               </p>
             </div>
           </div>

@@ -1,6 +1,5 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
-
 
 function Package() {
   return (
@@ -116,7 +115,17 @@ function Package() {
             <div className="col-md-7">
               <h1>Packages</h1>
               <p className="m-0">
-                <a href="index.html">Home</a> &gt; Packages
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    marginLeft: "1px",
+                  }}
+                >
+                  Home{" "}
+                </Link>{" "}
+                / Packages
               </p>
             </div>
           </div>
@@ -590,4 +599,4 @@ function Package() {
   );
 }
 
-export default Package
+export default Package;

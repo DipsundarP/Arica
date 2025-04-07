@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Contact() {
@@ -115,7 +115,17 @@ function Contact() {
             <div className="col-md-7">
               <h1>Contact</h1>
               <p className="m-0">
-                <a href="index.html">Home </a> / Contact
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    marginLeft: "1px",
+                  }}
+                >
+                  Home{" "}
+                </Link>{" "}
+                / Contact
               </p>
             </div>
           </div>
@@ -246,10 +256,28 @@ function Contact() {
                 <i className="ri-phone-fill fs-3 text-danger"></i>
                 <h4 className="mb-1 text-danger">Phone</h4>
                 <p className="mb-0">
-                  <a href="tel:1234567890">+123 4567 8900</a>
+                  <a
+                    href="tel:1234567890"
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    +123 4567 8900
+                  </a>
                 </p>
                 <p className="mb-0">
-                  <a href="tel:1234567890">+123 4567 8900</a>
+                  <a
+                    href="tel:1234567890"
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    +123 4567 8900
+                  </a>
                 </p>
               </div>
             </div>
@@ -258,10 +286,28 @@ function Contact() {
                 <i className="ri-mail-send-fill fs-3 text-danger"></i>
                 <h4 className="mb-1 text-danger">Email</h4>
                 <p className="mb-0">
-                  <a href="mailto:info@gmail.com">info@gmail.com</a>
+                  <a
+                    href="mailto:info@gmail.com"
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    info@gmail.com
+                  </a>
                 </p>
                 <p className="mb-0">
-                  <a href="mailto:support@gmail.com">support@gmail.com</a>
+                  <a
+                    href="mailto:support@gmail.com"
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                      marginLeft: "1px",
+                    }}
+                  >
+                    support@gmail.com
+                  </a>
                 </p>
               </div>
             </div>
@@ -421,4 +467,4 @@ function Contact() {
   );
 }
 
-export default Contact
+export default Contact;

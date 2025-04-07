@@ -115,7 +115,17 @@ function Book() {
             <div className="col-md-7">
               <h1>Book A Test</h1>
               <p className="m-0">
-                <a href="/">Home </a> / Book a test
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    marginLeft: "1px",
+                  }}
+                >
+                  Home{" "}
+                </Link>{" "}
+                / Book a test
               </p>
             </div>
           </div>

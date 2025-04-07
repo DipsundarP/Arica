@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Biplab() {
@@ -115,7 +115,17 @@ function Biplab() {
             <div className="col-md-7">
               <h1>Biplab Sengupta</h1>
               <p className="m-0">
-                <a href="index.html">Home </a> / Biplab Sengupta
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    marginLeft: "1px",
+                  }}
+                >
+                  Home{" "}
+                </Link>{" "}
+                / Biplab Sengupta
               </p>
             </div>
           </div>
@@ -373,4 +383,4 @@ function Biplab() {
   );
 }
 
-export default Biplab
+export default Biplab;

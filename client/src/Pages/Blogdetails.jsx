@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Blogdetails() {
@@ -115,7 +115,17 @@ function Blogdetails() {
             <div className="col-md-7">
               <h1>Health Blog Details</h1>
               <p className="m-0">
-                <a href="index.html">Home </a> / Health blog details
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    marginLeft: "1px",
+                  }}
+                >
+                  Home{" "}
+                </Link>{" "}
+                / Health blog details
               </p>
             </div>
           </div>
@@ -386,4 +396,4 @@ function Blogdetails() {
   );
 }
 
-export default Blogdetails
+export default Blogdetails;

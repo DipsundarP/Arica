@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useState } from "react";
 
 function Blogsection() {
   const settings = {
@@ -25,6 +26,7 @@ function Blogsection() {
       },
     ],
   };
+  
 
   const blogData = [
     {
@@ -82,6 +84,8 @@ function Blogsection() {
 }
 
 function BlogCard({ img, title, alt }) {
+
+  const [hover, setHover] = useState(false);
   return (
     <div className="card border p-3 h-100">
       <img src={img} className="card-img-top" alt={alt} />
@@ -95,7 +99,18 @@ function BlogCard({ img, title, alt }) {
           </p>
         </div>
         <div className="btn-comment d-flex justify-content-between mt-2 pt-1 align-items-center">
-          <a href="pages/blog.html" className="align-items-center read-more">
+          <a
+            href="pages/blog.html"
+            className="align-items-center read-more"
+            style={{
+              textDecoration: "none",
+              color: hover ? "blue" : "inherit",
+              marginLeft: "1px",
+              transition: "color 0.3s ease",
+            }}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+          >
             Read More <i className="ri-arrow-right-fill"></i>
           </a>
           <p className="mb-0 d-flex align-items-center">
