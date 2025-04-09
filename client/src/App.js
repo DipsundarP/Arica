@@ -20,7 +20,15 @@ import Package from "./Pages/Package";
 import Drpritam from "./Pages/Drpritam";
 import "./components/Blogsection";
 import "./components/Footer";
+import "./components/Appointment";
+import Booking from "./components/Booking";
+import Bookingfrom from "./components/Bookingfrom";
+import Contactus from "./components/Contactus";
+
+
+import "./components/Enquire";
 import Footer from "./components/Footer";
+import Bookingpack from "./components/Bookingpack";
 
 
 
@@ -46,19 +54,21 @@ function App() {
 
   return (
     <>
-        
-          <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/biplab" element={<Biplab />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/book" element={<Book />} />
-          <Route path="/blogdetails" element={<Blogdetails />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/package" element={<Package />} />
-          <Route path="/drpritam" element={<Drpritam />} />
-        </Routes>
-        <Footer/>
-       
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/biplab" element={<Biplab />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/book" element={<Book />} />
+        <Route path="/blogdetails" element={<Blogdetails />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/package" element={<Package />} />
+        <Route path="/drpritam" element={<Drpritam />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/bookingfrom" element={<Bookingfrom />} />
+        <Route path="/bookingpack" element={<Bookingpack />} />
+        <Route path="/contactus" element={<Contactus />} />
+      </Routes>
+      <Footer />
     </>
   );
 }
