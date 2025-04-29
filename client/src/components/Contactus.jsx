@@ -1,10 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 const Contactus = () => {
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    gender: "",
+    age: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState(null);
+  const [responseType, setResponseType] = useState(null); // "success" or "error"
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can add form validation or API calls here
-    console.log("Contact form submitted");
+    setLoading(true);
+    setResponseMessage(null);
+
+    try {
+      await axios.post("http://localhost:9000/contact", formData);
+      setResponseMessage("Message sent successfully.");
+      setResponseType("success");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        gender: "",
+        age: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      setResponseMessage("Failed to send message. Please try again.");
+      setResponseType("error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -33,43 +73,70 @@ const Contactus = () => {
                 We will reach out to you within 24 hours
               </p>
 
+              {/* Display response message */}
+              {responseMessage && (
+                <div
+                  className={`alert text-center ${
+                    responseType === "success"
+                      ? "alert-success"
+                      : "alert-danger"
+                  }`}
+                >
+                  {responseMessage}
+                </div>
+              )}
+
               <div className="row g-3">
                 <div className="col-md-6">
                   <input
                     type="text"
+                    name="firstName"
                     placeholder="First name"
                     className="form-control shadow-none py-2"
+                    value={formData.firstName}
+                    onChange={handleChange}
                     required
                   />
                 </div>
                 <div className="col-md-6">
                   <input
                     type="text"
+                    name="lastName"
                     placeholder="Last name"
                     className="form-control shadow-none py-2"
+                    value={formData.lastName}
+                    onChange={handleChange}
                     required
                   />
                 </div>
                 <div className="col-md-6">
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email address"
                     className="form-control shadow-none py-2"
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                   />
                 </div>
                 <div className="col-md-6">
                   <input
                     type="text"
+                    name="phone"
                     placeholder="Phone number"
                     className="form-control shadow-none py-2"
+                    value={formData.phone}
+                    onChange={handleChange}
                     required
                   />
                 </div>
                 <div className="col-md-6">
                   <select
+                    name="gender"
                     className="form-select shadow-none py-2"
-                    defaultValue=""
+                    value={formData.gender}
+                    onChange={handleChange}
                     required
                   >
                     <option value="" disabled>
@@ -82,8 +149,10 @@ const Contactus = () => {
                 </div>
                 <div className="col-md-6">
                   <select
+                    name="age"
                     className="form-select shadow-none py-2"
-                    defaultValue=""
+                    value={formData.age}
+                    onChange={handleChange}
                     required
                   >
                     <option value="" disabled>
@@ -97,15 +166,33 @@ const Contactus = () => {
                 </div>
                 <div className="col-12">
                   <textarea
+                    name="message"
                     style={{ resize: "none" }}
                     className="form-control shadow-none py-2"
                     placeholder="Your message"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                   ></textarea>
                 </div>
                 <div className="col-12 text-center">
-                  <button type="submit" className="btn btn-primary">
-                    Submit your request
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    disabled={loading}
+                  >
+                    {loading ? (
+                      <>
+                        <span
+                          className="spinner-border spinner-border-sm me-2"
+                          role="status"
+                          aria-hidden="true"
+                        ></span>
+                        Sending...
+                      </>
+                    ) : (
+                      "Submit your request"
+                    )}
                   </button>
                 </div>
               </div>

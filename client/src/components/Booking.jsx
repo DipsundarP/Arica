@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 function Booking() {
@@ -8,6 +9,10 @@ function Booking() {
     collectionDate: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(""); // To hold error message
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -16,10 +21,50 @@ function Booking() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: handle form submission logic here
-    console.log("Form Submitted:", formData);
+    setLoading(true);
+    setSubmitted(false);
+    setError(""); // Reset error message
+
+    try {
+      // Basic client-side validation
+      if (
+        !formData.fullName ||
+        !formData.phone ||
+        !formData.email ||
+        !formData.collectionDate
+      ) {
+        setError("Please fill out all fields.");
+        return;
+      }
+
+      // Validate email format
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(formData.email)) {
+        setError("Please enter a valid email.");
+        return;
+      }
+
+      // Send form data to the backend
+      await axios.post("http://localhost:9000/booking", formData);
+
+      setSubmitted(true);
+      // Reset form data on successful submission
+      setFormData({
+        fullName: "",
+        phone: "",
+        email: "",
+        collectionDate: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setError(
+        "An error occurred while submitting the form. Please try again later."
+      );
+    } finally {
+      setLoading(false); // Ensure loading state is reset
+    }
   };
 
   return (
@@ -31,7 +76,6 @@ function Booking() {
             <input
               type="text"
               name="fullName"
-              id="fullName"
               placeholder="Full Name"
               className="form-control"
               value={formData.fullName}
@@ -43,7 +87,6 @@ function Booking() {
             <input
               type="text"
               name="phone"
-              id="phone"
               placeholder="Phone Number"
               className="form-control"
               value={formData.phone}
@@ -55,7 +98,6 @@ function Booking() {
             <input
               type="email"
               name="email"
-              id="email"
               placeholder="Email ID"
               className="form-control"
               value={formData.email}
@@ -67,17 +109,29 @@ function Booking() {
             <input
               type="date"
               name="collectionDate"
-              id="collectionDate"
-              placeholder="Collection Date"
               className="form-control"
               value={formData.collectionDate}
               onChange={handleChange}
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary w-100" role="button">
-            SUBMIT
+          <button
+            type="submit"
+            className="btn btn-primary w-100"
+            disabled={loading}
+          >
+            {loading ? "Submitting..." : "SUBMIT"}
           </button>
+          {submitted && (
+            <div className="alert alert-success mt-3 p-2 text-center">
+              Booking submitted successfully!
+            </div>
+          )}
+          {error && (
+            <div className="alert alert-danger mt-3 p-2 text-center">
+              {error}
+            </div>
+          )}
           <small className="d-block mt-3 text-center">
             *All fields are mandatory.
             <br />
@@ -89,4 +143,4 @@ function Booking() {
   );
 }
 
-export default Booking
+export default Booking;

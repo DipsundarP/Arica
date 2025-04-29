@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Blogsection() {
   const settings = {
@@ -99,8 +100,8 @@ function BlogCard({ img, title, alt }) {
           </p>
         </div>
         <div className="btn-comment d-flex justify-content-between mt-2 pt-1 align-items-center">
-          <a
-            href="pages/blog.html"
+          <Link
+            to="/blogdetails"
             className="align-items-center read-more"
             style={{
               textDecoration: "none",
@@ -112,7 +113,7 @@ function BlogCard({ img, title, alt }) {
             onMouseLeave={() => setHover(false)}
           >
             Read More <i className="ri-arrow-right-fill"></i>
-          </a>
+          </Link>
           <p className="mb-0 d-flex align-items-center">
             <i className="fa-solid fa-user pe-2"></i>By Admin
           </p>

@@ -1,6 +1,19 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 
 const Bookingfrom = () => {
+  const [form, setForm] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    age: "",
+    gender: "",
+    date: "",
+    time: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
   const testList = [
     { name: "X-RAY", img: "x-ray.svg" },
     { name: "USG", img: "usg.svg" },
@@ -11,10 +24,33 @@ const Bookingfrom = () => {
     { name: "HEART", img: "heart.svg" },
   ];
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your logic here (form validation, API call, etc.)
-    console.log("Form Submitted");
+    setLoading(true);
+    setMessage(""); // Clear any previous messages
+
+    try {
+      await axios.post("http://localhost:9000/book", form);
+      setMessage("Booking submitted successfully!");
+      setForm({
+        fullName: "",
+        email: "",
+        phone: "",
+        age: "",
+        gender: "",
+        date: "",
+        time: "",
+      });
+    } catch (err) {
+      setMessage("Booking failed. Please try again.");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -32,6 +68,9 @@ const Bookingfrom = () => {
                     <input
                       type="text"
                       placeholder="Full Name"
+                      name="fullName"
+                      value={form.fullName}
+                      onChange={handleChange}
                       className="form-control shadow-none"
                       required
                     />
@@ -40,6 +79,9 @@ const Bookingfrom = () => {
                     <input
                       type="email"
                       placeholder="Email Address"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
                       className="form-control shadow-none"
                       required
                     />
@@ -48,13 +90,22 @@ const Bookingfrom = () => {
                     <input
                       type="text"
                       placeholder="Phone Number"
+                      name="phone"
+                      value={form.phone}
+                      onChange={handleChange}
                       className="form-control shadow-none"
                       required
                     />
                   </div>
 
                   <div className="col-md-6">
-                    <select className="form-select shadow-none w-100" required>
+                    <select
+                      className="form-select shadow-none w-100"
+                      name="age"
+                      value={form.age}
+                      onChange={handleChange}
+                      required
+                    >
                       <option value="" disabled>
                         Select Age
                       </option>
@@ -66,7 +117,13 @@ const Bookingfrom = () => {
                   </div>
 
                   <div className="col-md-6">
-                    <select className="form-select shadow-none w-100" required>
+                    <select
+                      className="form-select shadow-none w-100"
+                      name="gender"
+                      value={form.gender}
+                      onChange={handleChange}
+                      required
+                    >
                       <option value="" disabled>
                         Select Gender
                       </option>
@@ -78,29 +135,39 @@ const Bookingfrom = () => {
 
                   <div className="col-md-6">
                     <input
-                      type="text"
-                      id="datepicker"
+                      type="date"
                       className="form-control shadow-none"
-                      placeholder="Select date"
+                      name="date"
+                      value={form.date}
+                      onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="col-md-6">
                     <input
-                      type="text"
+                      type="time"
                       className="form-control shadow-none"
-                      placeholder="Enter Time"
+                      name="time"
+                      value={form.time}
+                      onChange={handleChange}
                       required
                     />
                   </div>
 
                   <div className="text-center">
                     <button type="submit" className="btn btn-primary">
-                      Submit Your Booking
+                      {loading ? "Submitting..." : "Submit Your Booking"}
                     </button>
                   </div>
                 </div>
               </form>
+
+              {/* Display success/error message */}
+              {message && (
+                <div className="alert alert-info mt-3" role="alert">
+                  {message}
+                </div>
+              )}
             </div>
           </div>
 
@@ -138,4 +205,4 @@ const Bookingfrom = () => {
   );
 };
 
-export default  Bookingfrom;
+export default Bookingfrom;

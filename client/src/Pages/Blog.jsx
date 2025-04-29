@@ -164,12 +164,17 @@ function Blog() {
                       </p>
                     </div>
                     <div className="btn-comment d-flex justify-content-between mt-2 pt-1 align-items-center">
-                      <a
-                        href="blog-details.html"
+                      <Link
+                        to="/blogdetails"
                         className="align-items-center read-more"
+                        style={{
+                          textDecoration: "none",
+                          color: "inherit",
+                          marginLeft: "1px",
+                        }}
                       >
                         Read More <i className="ri-arrow-right-fill"></i>
-                      </a>
+                      </Link>
                       <p className="mb-0 d-flex align-items-center">
                         <i className="fa-solid fa-user pe-2"></i>By Admin
                       </p>

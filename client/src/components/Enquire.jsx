@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 function Enquire() {
@@ -10,6 +11,10 @@ function Enquire() {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+  const [statusType, setStatusType] = useState(""); // 'success' or 'error'
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -18,10 +23,33 @@ function Enquire() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission (API call, etc.)
-    console.log("Submitted:", formData);
+    setLoading(true);
+    setStatusMessage("");
+    setStatusType("");
+
+    try {
+      await axios.post("http://localhost:9000/enquire", formData);
+
+      setStatusMessage("✅ Your query has been submitted successfully!");
+      setStatusType("success");
+
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        type: "",
+        test: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatusMessage("❌ Failed to submit. Please try again.");
+      setStatusType("error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -105,6 +133,7 @@ function Enquire() {
                         className="form-select"
                         value={formData.type}
                         onChange={handleChange}
+                        style={{ width: "200px" }}
                         required
                       >
                         <option value="" disabled>
@@ -121,6 +150,7 @@ function Enquire() {
                         className="form-select"
                         value={formData.test}
                         onChange={handleChange}
+                        style={{ width: "210px" }}
                         required
                       >
                         <option value="" disabled>
@@ -145,9 +175,27 @@ function Enquire() {
                       ></textarea>
                     </div>
 
+                    {statusMessage && (
+                      <div className="col-12">
+                        <div
+                          className={`alert ${
+                            statusType === "success"
+                              ? "alert-success"
+                              : "alert-danger"
+                          } p-2 mb-0 text-center`}
+                        >
+                          {statusMessage}
+                        </div>
+                      </div>
+                    )}
+
                     <div className="text-center">
-                      <button type="submit" className="btn btn-primary">
-                        Submit Your Query
+                      <button
+                        type="submit"
+                        className="btn btn-primary"
+                        disabled={loading}
+                      >
+                        {loading ? "Submitting..." : "Submit Your Query"}
                       </button>
                     </div>
                   </div>
