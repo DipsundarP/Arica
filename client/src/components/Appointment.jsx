@@ -31,7 +31,7 @@ function Appointment() {
     setSubmitted(false);
 
     try {
-      await axios.post("http://localhost:9000/appointment", formData);
+      await axios.post("https://arica.onrender.com/appointment", formData);
       setSubmitted(true);
       setFormData({
         firstName: "",

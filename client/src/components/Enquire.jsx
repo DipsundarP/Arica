@@ -30,7 +30,7 @@ function Enquire() {
     setStatusType("");
 
     try {
-      await axios.post("http://localhost:9000/enquire", formData);
+      await axios.post("https://arica.onrender.com/enquire", formData);
 
       setStatusMessage("✅ Your query has been submitted successfully!");
       setStatusType("success");

@@ -26,7 +26,7 @@ const Contactus = () => {
     setResponseMessage(null);
 
     try {
-      await axios.post("http://localhost:9000/contact", formData);
+      await axios.post("https://arica.onrender.com/contact", formData);
       setResponseMessage("Message sent successfully.");
       setResponseType("success");
       setFormData({

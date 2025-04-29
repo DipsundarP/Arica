@@ -47,7 +47,7 @@ function Booking() {
       }
 
       // Send form data to the backend
-      await axios.post("http://localhost:9000/booking", formData);
+      await axios.post("https://arica.onrender.com/booking", formData);
 
       setSubmitted(true);
       // Reset form data on successful submission

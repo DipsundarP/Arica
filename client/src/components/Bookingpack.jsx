@@ -43,7 +43,7 @@ const Bookingpack = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:9000/package",
+        "https://arica.onrender.com/package",
         formData
       );
       setSuccessMessage(response.data.message);

@@ -34,7 +34,7 @@ const Bookingfrom = () => {
     setMessage(""); // Clear any previous messages
 
     try {
-      await axios.post("http://localhost:9000/book", form);
+      await axios.post("https://arica.onrender.com/book", form);
       setMessage("Booking submitted successfully!");
       setForm({
         fullName: "",
