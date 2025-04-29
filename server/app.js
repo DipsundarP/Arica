@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 app.use(
   cors({
-    origin: "https://arica-five.vercel.app" || "http://localhost:3000",
+    origin: "https://arica-five.vercel.app",
     methods: "POST , GET",
     allowedHeaders: "Content-Type,Authorization", // Allow specific headers
   })
